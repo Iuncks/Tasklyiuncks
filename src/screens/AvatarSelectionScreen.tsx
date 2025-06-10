@@ -12,13 +12,8 @@ import { COLORS } from '../utils/constants';
 import Button from '../components/atoms/Button';
 import { profileService } from '../domain/profile';
 
-const avatars = [
-    require('../assets/avatars/avatar1.png'),
-    require('../assets/avatars/avatar2.png'),
-    require('../assets/avatars/avatar3.png'),
-    require('../assets/avatars/avatar4.png'),
-    require('../assets/avatars/avatar5.png'),
-];
+const baseUrl = 'https://apptasklydeiuncks.s3.us-east-2.amazonaws.com/imgs+de+Taskly/';
+const avatars = Array.from({ length: 5 }, (_, i) => `${baseUrl}avatar${i + 1}.png.png`);
 
 const borderColors = ['#5B3CC4', '#E6E0F7', '#32C25B', '#E63946', '#B58B46'];
 
@@ -55,7 +50,6 @@ export default function AvatarSelectionScreen() {
             <Text style={styles.mainTitle}>SELECIONE SEU AVATAR</Text>
             <Text style={styles.subTitle}>(Escolha somente um.)</Text>
 
-            {/* Primeira linha (3 avatares) */}
             <View style={styles.row}>
                 {avatars.slice(0, 3).map((avatar, index) => (
                     <TouchableOpacity
@@ -70,7 +64,7 @@ export default function AvatarSelectionScreen() {
                         ]}
                     >
                         <Image
-                            source={avatar}
+                            source={{ uri: avatar }}
                             style={[
                                 styles.avatarImage,
                                 selected !== null && selected !== index && styles.avatarImageNotSelected,
@@ -80,7 +74,6 @@ export default function AvatarSelectionScreen() {
                 ))}
             </View>
 
-            {/* Segunda linha (2 avatares) */}
             <View style={styles.row}>
                 {avatars.slice(3, 5).map((avatar, index) => (
                     <TouchableOpacity
@@ -95,7 +88,7 @@ export default function AvatarSelectionScreen() {
                         ]}
                     >
                         <Image
-                            source={avatar}
+                            source={{ uri: avatar }}
                             style={[
                                 styles.avatarImage,
                                 selected !== null && selected !== index + 3 && styles.avatarImageNotSelected,
@@ -153,6 +146,7 @@ const styles = StyleSheet.create({
         opacity: 0.4,
     },
     avatarBtn: {
-    marginTop: 50,
-},
+        marginTop: 50,
+    },
 });
+
