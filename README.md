@@ -64,14 +64,14 @@ RN-MAR25-MOBILE-MAVERICKS/
 │   │   │   ├── dto/
 │   │   │   │   └── login.dto.ts
 │   │   │   └── services/
-│   │   │       ├── auth.service.ts
-│   │   │       └── index.ts
+│   │   │   │   └── auth.service.ts
+│   │   │   └── index.ts
 │   │   └── profile/
 │   │       ├── dtos/
 │   │       │   └── profile.dto.ts
 │   │       └── services/
-│   │           ├── profile.service.ts
-│   │           └── index.ts
+│   │       │   └── profile.service.ts
+│   │       └── index.ts
 │   ├── hooks/
 │   │   └── useUserProfile.ts
 │   ├── navigation/
