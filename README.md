@@ -26,25 +26,54 @@ A arquitetura foi planejada para garantir **clareza, escalabilidade e manutenibi
 
 ---
 
-## 📁 Estrutura de Pastas
-
-```text
+´´´
 RN-MAR25-MOBILE-MAVERICKS/
 ├── src/
 │   ├── assets/
 │   │   └── avatars/
-│   │       ├── avatar1.jpg
+│   │       ├── checkbox.png
 │   │       ├── ellipse1.png
+│   │       ├── filtro.png
+│   │       ├── moon.png
+│   │       ├── sad.png
+│   │       ├── sun.png
 │   │       ├── Vector.png
 │   │       └── Vector1.png
 │   ├── components/
 │   │   ├── atoms/
+│   │   │   ├── ActionCard.tsx
+│   │   │   ├── ActionModal.tsx
 │   │   │   ├── Button.tsx
 │   │   │   ├── Checkbox.tsx
-│   │   │   └── Input.tsx
+│   │   │   ├── FooterNav.tsx
+│   │   │   ├── Input.tsx
+│   │   │   ├── ProfileInfo.tsx
+│   │   │   ├── SimpleButton.tsx
+│   │   │   └── ThemeModal.tsx
 │   │   └── molecules/
 │   │       ├── Header.tsx
 │   │       └── TabBar.tsx
+│   ├── context/
+│   │   ├── AuthContext.tsx
+│   │   ├── ErrorModalContext.tsx
+│   │   └── ThemeContext.tsx
+│   ├── data/
+│   │   └── carouselData.ts
+│   ├── domain/
+│   │   ├── auth/
+│   │   │   ├── dto/
+│   │   │   │   └── login.dto.ts
+│   │   │   └── services/
+│   │   │   │   └── auth.service.ts
+│   │   │   └── index.ts
+│   │   └── profile/
+│   │       ├── dtos/
+│   │       │   └── profile.dto.ts
+│   │       └── services/
+│   │       │   └── profile.service.ts
+│   │       └── index.ts
+│   ├── hooks/
+│   │   └── useUserProfile.ts
 │   ├── navigation/
 │   │   ├── AppNavigator.tsx
 │   │   ├── AuthStack.tsx
@@ -53,17 +82,27 @@ RN-MAR25-MOBILE-MAVERICKS/
 │   │   └── types.ts
 │   ├── screens/
 │   │   ├── modal/
-│   │   │   └── BiometricModal.tsx
+│   │   │   ├── BiometricModal.tsx
+│   │   │   ├── CreateTaskModal.tsx
+│   │   │   └── ErrorModal.tsx
 │   │   ├── AvatarSelectionScreen.tsx
+│   │   ├── EditProfileScreen.tsx
+│   │   ├── EditTaskScreen.tsx
+│   │   ├── ErrorScreen.tsx
 │   │   ├── HomePage.tsx
 │   │   ├── LoginScreen.tsx
+│   │   ├── PreferencesScreen.tsx
+│   │   ├── ProfileScreen.tsx
 │   │   ├── RegisterScreen.tsx
 │   │   ├── SplashScreen.tsx
-│   │   ├── SubTaskScreen.tsx
-│   │   └── TaskDetailScreen.tsx
+│   │   ├── TaskDetailScreen.tsx
+│   │   └── TermsScreen.tsx
 │   └── utils/
+│       ├── api.ts
 │       ├── colors.ts
 │       ├── constants.ts
+│       ├── parseApiError.ts
+│       ├── storage.ts
 │       └── typography.ts
 └── App.tsx
 ```
